@@ -1,5 +1,5 @@
 const express = require('express')
-const workout = require('../models/workoutmodel.js')
+const Workout = require('../models/workoutModel')
 //GEt all Workouts
 router.get('/', (req, res) => {
     res.json({mssg: 'GETT ALL WORKOUTS!'})
