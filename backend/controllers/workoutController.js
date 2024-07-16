@@ -8,8 +8,17 @@ const getWorkouts = async (req, res) => {
 }   
 
 //get a single
-const getWorkouts = async (req, res) => {
-    const {id} = req.params   
+const getWorkout = async (req, res) => {
+    const {id} = req.params 
+    
+    const workout = await Workout.findById(id)
+
+    if(!workout){
+       return res.status(404).json({message: 'workout not found'})
+    }
+
+    res.status(200).json(workout)
+}
 
 //create a workout
 const createWorkout = async (req, res) => {
@@ -28,5 +37,7 @@ try {
 //update a workout
 
 module.exports = {
+    getWorkouts,
+    getWorkout,
     createWorkout
 }
