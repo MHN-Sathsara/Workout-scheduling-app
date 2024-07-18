@@ -1,12 +1,14 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 //pages and com
-import Home from './pages/Home';
+import Home from './pages/Home'
+import Navbar from './components/Navbar'
 
 function App() {
   return (
     <div className="App">
-      <Router>
+      <BrowserRouter>
+      <Navbar />
        <div className="pages">
         <Routes>
           <Route
@@ -15,7 +17,7 @@ function App() {
           />
         </Routes>
        </div>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
